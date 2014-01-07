@@ -1,3 +1,63 @@
+insert into vote_candidates
+            (id, position, name ) values
+            (11, 1, Mike Maguire);
+insert into vote_candidates
+            (id, position, name ) values
+            (7, 1, Robin Lawrance);
+insert into vote_candidates
+            (id, position, name ) values
+            (17, 1, Charlie Taylor);
+insert into vote_candidates
+            (id, position, name ) values
+            (2, 1, Clive Doucet);
+insert into vote_candidates
+            (id, position, name ) values
+            (1, 1, Idris Ben-Tahir);
+insert into vote_candidates
+            (id, position, name ) values
+            (18, 1, Jim Watson);
+insert into vote_candidates
+            (id, position, name ) values
+            (0, 1, Cesar Bello);
+insert into vote_candidates
+            (id, position, name ) values
+            (16, 1, Jane Scharf);
+insert into vote_candidates
+            (id, position, name ) values
+            (13, 1, Julio Pita);
+insert into vote_candidates
+            (id, position, name ) values
+            (6, 1, Robert Larter);
+insert into vote_candidates
+            (id, position, name ) values
+            (3, 1, Joseph Furtenbacher);
+insert into vote_candidates
+            (id, position, name ) values
+            (9, 1, Fraser Liscumb);
+insert into vote_candidates
+            (id, position, name ) values
+            (12, 1, Larry O'Brien);
+insert into vote_candidates
+            (id, position, name ) values
+            (14, 1, Sean Ryan);
+insert into vote_candidates
+            (id, position, name ) values
+            (15, 1, Michael St. Arnaud);
+insert into vote_candidates
+            (id, position, name ) values
+            (8, 1, Vincent Libweshya);
+insert into vote_candidates
+            (id, position, name ) values
+            (4, 1, Robert G. Gauthier);
+insert into vote_candidates
+            (id, position, name ) values
+            (19, 1, Samuel Wright);
+insert into vote_candidates
+            (id, position, name ) values
+            (10, 1, Daniel J. Lyrette);
+insert into vote_candidates
+            (id, position, name ) values
+            (5, 1, Andrew Haydon);
 insert into vote_results 
           (ward, location, position, candidate, votes) 
             values 

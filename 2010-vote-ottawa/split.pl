@@ -8,11 +8,21 @@ my %unique;
 my $mayor=1;
 my $loc;
 
-my $mayor_candidates = "Cesar Bello,Idris Ben-Tahir,Clive Doucet,Joseph Furtenbacher,Robert G. Gauthier,Andrew Haydon,Robert Larter,Robin Lawrance,Vincent Libweshya,Fraser Liscumb,Daniel J. Lyrette,Mike Maguire,Larry O'Brien,Julio Pita,Sean Ryan,Michael St. Arnaud,Jane Scharf,Charlie Taylor,Jim Watson,Samuel Wright";
+my $mayor_candidates = "Cesar Bello,Idris Ben-Tahir,Clive Doucet,Joseph Furtenbacher,Robert G. Gauthier,Andrew Haydon,Robert Larter,Robin Lawrance,Vincent Libweshya,Fraser Liscumb,Daniel J. Lyrette,Mike Maguire,Larry O\'Brien,Julio Pita,Sean Ryan,Michael St. Arnaud,Jane Scharf,Charlie Taylor,Jim Watson,Samuel Wright";
 
 my @mayor_candidates = split (",",$mayor_candidates);
 my $mayor_index=0;
 my %mayor_candidates = map { $mayor_index++ => $_   } @mayor_candidates;
+
+foreach my $key (keys(%mayor_candidates)) {
+  $mayor_candidates{$key}=~s/'/\\'/;
+  my $sql = "insert into vote_candidates
+            (id, position, name ) values
+            ($key, 1, '".$mayor_candidates{$key}."');";
+
+  print $sql."\n";
+}
+
 
 #print Dumper (\%mayor_candidates);
 my @other_header = "Ward,LocationCode,LocationName,Reg. Voters,Total Votes";
