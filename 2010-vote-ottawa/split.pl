@@ -8,7 +8,27 @@ my %unique;
 my $mayor=1;
 my $loc;
 
-my $mayor_candidates = "Cesar Bello,Idris Ben-Tahir,Clive Doucet,Joseph Furtenbacher,Robert G. Gauthier,Andrew Haydon,Robert Larter,Robin Lawrance,Vincent Libweshya,Fraser Liscumb,Daniel J. Lyrette,Mike Maguire,Larry O\'Brien,Julio Pita,Sean Ryan,Michael St. Arnaud,Jane Scharf,Charlie Taylor,Jim Watson,Samuel Wright";
+my $mayor_candidates = { 
+	130=>"Cesar Bello",
+	136=>"Idris Ben-Tahir",
+	132=>"Clive Doucet",
+	x=>"Joseph Furtenbacher",
+	143=>"Robert G. Gauthier",
+	129=>"Andrew Haydon",
+	x=>"Robert Larter",
+	x=>"Robin Lawrance",
+	x=>"Vincent Libweshya",
+	135=>"Fraser Liscumb",
+	133=>"Daniel J. Lyrette",
+	142=>"Mike Maguire",
+	140=>"Larry O\'Brien",
+	139=>"Julio Pita",
+	x=>"Sean Ryan",
+	141=>"Michael St. Arnaud",
+	137=>"Jane Scharf",
+	131=>"Charlie Taylor",
+	138=> 'Jim Watson',
+	145=>"Samuel Wright"};
 
 my @mayor_candidates = split (",",$mayor_candidates);
 my $mayor_index=0;
@@ -61,9 +81,9 @@ while (<>) {
       my $candidate_index=100+$i; # reg and total votes
       my $votes = int ($results[$i]);
         my $sql = "insert into vote_results 
-          (ward, location, position, candidate, votes) 
+          (ward, location, position, candidate, votes, year) 
             values 
-          ($ward, '$ward_loc', 1, $candidate_index, $votes);\n";
+          ($ward, '$ward_loc', 0, $candidate_index, $votes, 2010);\n";
         print $sql;
     } 
     for my $i (3 .. $#results ) { 
@@ -72,7 +92,7 @@ while (<>) {
         my $sql = "insert into vote_results 
           (ward, location, position, candidate, votes) 
             values 
-          ($ward, '$ward_loc', 1, $candidate_index, $votes);\n";
+          ($ward, '$ward_loc', 0, $candidate_index, $votes, 2010);\n";
         print $sql;
 
     }
